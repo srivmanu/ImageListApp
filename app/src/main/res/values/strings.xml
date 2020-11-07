@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Images List</string>
+    <string name="image_item">ImageItem</string>
+</resources>

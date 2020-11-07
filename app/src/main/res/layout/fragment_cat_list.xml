@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2020.
+  ~ This file is developed by Manu Srivastava.
+  ~ All intents and usage of the file are supposed to be personal. If you
+  ~ are using this file in your deployment code, please make sure you
+  ~ test the file before you deploy. Else, may god help your application
+  ~
+  ~ Manu Srivastava can be contacted at srivmanu@gmail.com
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8sp"
+    android:background="#fff"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
+        android:layout_margin="@dimen/text_margin"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/image_item" />
+
+    <TextView
+        android:id="@+id/item_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/text_margin"
+        android:text="Check"
+        android:textAlignment="center"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textSize="20sp" />
+</LinearLayout>
