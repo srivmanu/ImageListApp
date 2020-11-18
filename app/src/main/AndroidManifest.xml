@@ -3,7 +3,9 @@
     package="com.friday.catlist">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".AppClass"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -11,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CatList"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.MainActivity">
+        <activity
+            android:name=".Activity.BottomTabbedActivity"
+            android:label="@string/title_activity_bottom_tabbed">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

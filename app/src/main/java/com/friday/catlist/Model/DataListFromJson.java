@@ -32,10 +32,19 @@ public class DataListFromJson {
     public static class ImageItem {
         String title;
         String url;
+        boolean fav = false;
 
         public ImageItem(String title, String url) {
             this.title = title;
             this.url = url;
+        }
+
+        public Boolean getFav() {
+            return fav;
+        }
+
+        public void setFav(boolean fav) {
+            this.fav = fav;
         }
 
         public String getTitle() {

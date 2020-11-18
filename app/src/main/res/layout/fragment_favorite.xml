@@ -8,15 +8,15 @@
   ~ Manu Srivastava can be contacted at srivmanu@gmail.com
   -->
 
+
 <androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/list"
+    android:name="com.friday.catlist.Fragment.FavoriteFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#C8C8C8"
     app:layoutManager="LinearLayoutManager"
     tools:context=".Fragment.CatListFragment"
-    tools:listitem="@layout/fragment_cat_list"
-    android:name="com.friday.catlist.Fragment.CatListFragment"
-    />
+    tools:listitem="@layout/fragment_cat_list" />

@@ -23,23 +23,25 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.friday.catlist.Activity.BottomTabbedActivity;
-import com.friday.catlist.Adapter.CatListItemAdapter;
+import com.friday.catlist.Adapter.FavoriteAdapter;
 import com.friday.catlist.AppClass;
 import com.friday.catlist.R;
 
-public class CatListFragment extends Fragment {
+import java.util.ArrayList;
+
+public class FavoriteFragment extends Fragment {
 
     private static final String ARG_COLUMN_COUNT = "column-count";
     AppClass application;
     private int mColumnCount = 2;
     private AppCompatActivity mActivity;
-    private CatListItemAdapter adapter;
+    private FavoriteAdapter adapter;
 
-    public CatListFragment() {
+    public FavoriteFragment() {
     }
 
-    public static CatListFragment newInstance(int columnCount) {
-        CatListFragment fragment = new CatListFragment();
+    public static FavoriteFragment newInstance(int columnCount) {
+        FavoriteFragment fragment = new FavoriteFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
         fragment.setArguments(args);
@@ -58,25 +60,26 @@ public class CatListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_cat_list_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_favorite, container, false);
         if (view instanceof RecyclerView) {
-            Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
             if (mColumnCount <= 1) {
-                recyclerView.setLayoutManager(new LinearLayoutManager(context));
+                recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
             } else {
-                recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
+                recyclerView.setLayoutManager(new GridLayoutManager(view.getContext(), mColumnCount));
             }
-            adapter = new CatListItemAdapter(application.getList());
-            application.getListFromNetwork("https://s3-us-west-1.amazonaws.com/net.raquo.images/ContentStub.json", this);
+            adapter = new FavoriteAdapter(new ArrayList<>(application.getList()));
             recyclerView.setAdapter(adapter);
         }
+
         return view;
     }
+
 
     public void updateAdapter() {
         mActivity.runOnUiThread(() -> adapter.notifyDataSetChanged());
     }
+
 
     @Override
     public void onAttach(Context context) {

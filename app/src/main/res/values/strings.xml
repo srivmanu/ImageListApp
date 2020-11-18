@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Images List</string>
     <string name="image_item">ImageItem</string>
+    <string name="title_activity_bottom_tabbed">MainActivity</string>
+    <string name="title_catlist">Image List </string>
+    <string name="title_favorites">Favorites</string>
+    <string name="star">★</string>
+    <string name="unstar">☆</string>
 </resources>

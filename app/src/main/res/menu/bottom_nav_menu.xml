@@ -8,9 +8,17 @@
   ~ Manu Srivastava can be contacted at srivmanu@gmail.com
   -->
 
-<resources>
-    <dimen name="text_margin">16dp</dimen>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
-</resources>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/navigation_catlist"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_catlist" />
+
+    <item
+        android:id="@+id/navigation_favorites"
+        android:icon="@drawable/ic_baseline_star_24"
+        android:title="@string/title_favorites" />
+
+</menu>

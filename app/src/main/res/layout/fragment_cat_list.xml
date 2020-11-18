@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (c) 2020.
   ~ This file is developed by Manu Srivastava.
   ~ All intents and usage of the file are supposed to be personal. If you
@@ -9,7 +8,8 @@
   ~ Manu Srivastava can be contacted at srivmanu@gmail.com
   -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8sp"
@@ -21,19 +21,36 @@
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="100sp"
-        android:layout_margin="@dimen/text_margin"
         android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/text_margin"
+        android:contentDescription="@string/image_item"
         android:scaleType="centerCrop"
-        android:contentDescription="@string/image_item" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/item_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/content"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="@dimen/text_margin"
-        android:text="Check"
         android:textAlignment="center"
         android:textAppearance="?attr/textAppearanceListItem"
-        android:textSize="20sp" />
-</LinearLayout>
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/content"
+        app:layout_constraintStart_toStartOf="@+id/content"
+        app:layout_constraintTop_toBottomOf="@+id/content" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        style="@android:style/Widget.DeviceDefault.Button.Toggle"
+        android:layout_width="50sp"
+        android:layout_height="60sp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:textOff="@string/star"
+        android:textOn="@string/unstar"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/content"
+        app:layout_constraintEnd_toEndOf="@+id/content" />
+</androidx.constraintlayout.widget.ConstraintLayout>

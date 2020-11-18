@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2020.
+  ~ This file is developed by Manu Srivastava.
+  ~ All intents and usage of the file are supposed to be personal. If you
+  ~ are using this file in your deployment code, please make sure you
+  ~ test the file before you deploy. Else, may god help your application
+  ~
+  ~ Manu Srivastava can be contacted at srivmanu@gmail.com
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_catlist">
+
+    <fragment
+        android:id="@+id/navigation_catlist"
+        android:name="com.friday.catlist.Fragment.CatListFragment"
+        android:label="@string/title_catlist"
+        tools:layout="@layout/fragment_cat_list_list" />
+
+    <fragment
+        android:id="@+id/navigation_favorites"
+        android:name="com.friday.catlist.Fragment.FavoriteFragment"
+        android:label="@string/title_favorites"
+        tools:layout="@layout/fragment_favorite" />
+</navigation>
